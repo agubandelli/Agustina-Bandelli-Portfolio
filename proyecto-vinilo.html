@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Portfolio | Agustina Bandelli</title>
+</head>
+<body>
+
+
+<body>
+
+    <nav class="nav-principal nav-fija-proyecto">
+        <div class="nav-container">
+            <div class="nav-links desktop-only">
+                <a href="index.html">INICIO</a>
+                <a href="#proyectos">PROYECTOS</a>
+            </div>
+
+            <a href="index.html" class="nav-logo">
+                <img src="img/logo-chico-agustina-bandelli.png" alt="">
+            </a>
+            
+            <div class="nav-links desktop-only">
+                <a href="#sobre-mi">SOBRE MÍ</a>
+                <a href="#contacto">CONTACTO</a>
+            </div>
+
+            <button class="menu-toggle noVisibleDesktop" id="menu-toggle" aria-label="Abrir menú">
+  <span class="menu-icon noVisibleDesktop">☰</span>
+  <span class="close-icon noVisibleDesktop">✕</span>
+</button>
+        </div>
+    </nav>
+
+    
+    <section class="detalle-proyecto">
+    <div class="proyecto-header">
+        <div class="columna-izquierda">
+            <h2 class="proyecto-titulo">Vinilo</h2>
+            <p>Portal | El Cuarteto de Nos</p>
+            <p class="proyecto-descripcion">
+Diseño integral de un vinilo de edición especial basado en el concepto de "quiebre musical". Un objeto físico interactivo que propone un viaje narrativo en dos actos: desde el sarcasmo ácido del mundo exterior (Lado A) hacia la introspección emocional y profunda (Lado B).
+            </p>
+    
+           <p class="label-herramientas">Realizado en grupo con Paula Arbelo y Luciana Cardozo.</p>
+        </div>
+        
+        <div class="columna-derecha">
+            <span class="label-herramientas">HERRAMIENTAS UTILIZADAS:</span>
+            <div class="tags-container">
+                <span class="btn-papel-antiguo">Photoshop</span>
+                <span class="btn-papel-antiguo">Illustrator</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="proyecto-imagen-full">
+        <img src="img/wesplit-01.png" alt="Pantallas de WeSplit">
+    </div> -->
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="img/vinilo-01.jpg" alt="Paisaje 1">
+            </div>
+            <div class="slide">
+                <img src="img/vinilo-02.jpg" alt="Paisaje 2">
+            </div>
+            <div class="slide">
+                <img src="img/vinilo-03.jpg" alt="Paisaje 3">
+            </div>
+            
+        </div>
+        
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+        
+        <div class="dots"></div>
+    </div>
+
+
+</section>
+
+<section class="detalle-proyecto">
+  <!-- <h3 class="eyebrow">RESEARCH</h3> -->
+
+  <div class="research-grid">
+    <div class="block">
+      <!-- <h4 class="title">PROBLEMA</h4> -->
+      <p>
+        Inspirado en la idea de "portal" mencionada por Roberto Musso, este proyecto rediseña la experiencia discográfica de El Cuarteto de Nos. El álbum se divide en dos universos: el Lado A (El Afuera Sarcástico) y el Lado B (El Adentro Emocional)..
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <!-- <h4 class="title">SOLUCIÓN</h4> -->
+      <p>
+       A través de un sistema gráfico basado en la percepción y el color, el diseño utiliza una cerradura calada en la portada para invitar al usuario a atravesar físicamente el packaging, convirtiendo el acto de escuchar el vinilo en un proceso de transformación personal.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section class="prototipos-section large-container">
+  <h2>Prototipo interactivo</h2>
+  <p class="intro-text">
+    Te invito a explorar el prototipo.
+  </p>
+
+  <div class="prototipos-container">
+    <div class="prototipo">
+      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/IORigceQZfmXytnATFCV9f/WeSplit-App?node-id=103-1793&scaling=contain&content-scaling=fixed&page-id=2%3A3&embed-host=share" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+<section class="navegacion-proyectos">
+    <a href="index.html" class="btn-volver">
+        <span class="flecha">←</span> VOLVER AL INICIO
+    </a>
+    
+    <a href="proyecto-folleto.html" class="btn-siguiente">
+        SIGUIENTE PROYECTO <span class="flecha">→</span>
+    </a>
+</section>
+
+
+<footer class="footer">
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/agustina-bandelli-8b76921b4/" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.behance.net/agustinbandell" target="_blank" aria-label="Behance">
+                <i class="fa-brands fa-behance"></i>
+            </a>
+            <a href="https://github.com/agubandelli" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        <p>Agustina Bandelli © 2026</p>
+    </footer>
+
+
+
+
+
+     <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

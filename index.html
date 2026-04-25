@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Agustina Bandelli</title>
+    
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="nav-principal">
+        <div class="nav-container">
+            <div class="nav-links desktop-only">
+                <a href="index.html">INICIO</a>
+                <a href="#proyectos">PROYECTOS</a>
+            </div>
+
+            <a href="index.html" class="nav-logo">
+                <img src="img/logo-chico-agustina-bandelli.png" alt="Agustina Bandelli">
+            </a>
+            
+            <div class="nav-links desktop-only">
+                <a href="javascript:void(0)" onclick="abrirSobreMi()">SOBRE MÍ</a>
+                <a href="javascript:void(0)" onclick="abrirContacto()">CONTACTO</a>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+                <span class="menu-icon">☰</span>
+                <span class="close-icon">✕</span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="delay-content">
+                <span class="mi-especial">Mi</span>
+                <span class="gabinete-especial"> gabinete</span><br>
+                <span class="resto-titulo">de curiosidades.</span>
+            </h1>
+            <div class="autor">POR AGUSTINA BANDELLI</div>
+        </div>
+    </header>
+
+    <section  class="scroll-container">
+        <div class="parrafo parrafo-izquierda" id="parrafo1">
+            Una colección de proyectos, ideas y procesos
+        </div>
+        <div class="parrafo parrafo-derecha" id="parrafo2">
+            que construyen mi forma de diseñar.
+        </div>
+    </section>
+
+    <section class="gabinete-interactivo" id="proyectos">
+        
+       <picture>
+        <source media="(min-width: 1025px)" srcset="img/gabinete-desktop.png">
+        
+        <img src="img/gabinete.png" class="mueble-img" alt="Gabinete de Curiosidades">
+    </picture>
+    <h2 class="titulo-madera">El Gabinete de Curiosidades</h2>
+        <div class="capa-objetos">
+
+            <a href="javascript:void(0)" class="item-gabinete item-sobreMi" onclick="abrirSobreMi()">
+    <img src="img/sobre-mi.png" alt="Sobre mí">
+</a>
+            <a href="proyecto-bodega.html" class="item-gabinete item-bodega">
+                <img src="img/bodega.png" alt="Bodega">
+            </a>
+            <a href="proyecto-vinilo.html" class="item-gabinete item-vinilo">
+                <img src="img/vinilo.png" alt="Vinilo">
+            </a>
+            <a href="proyecto-folleto.html" class="item-gabinete item-folleto">
+                <img src="img/pergamino.png" alt="Folleto">
+            </a>
+            <a href="proyecto-app.html" class="item-gabinete item-app">
+                <img src="img/wesplit.png" alt="App WeSplit">
+            </a>
+            <a href="proyecto-petshop.html" class="item-gabinete item-caja">
+                <img src="img/caja.png" alt="Pet Shop">
+            </a>
+            <a href="javascript:void(0)" class="item-gabinete item-contacto" onclick="abrirContacto()">
+                <img src="img/sobre-cerrado.png" class="sobre-img cerrado" alt="Sobre cerrado">
+                <img src="img/sobre-abierto.png" class="sobre-img abierto" alt="Sobre abierto">
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/agustina-bandelli-8b76921b4/" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.behance.net/agustinbandell" target="_blank" aria-label="Behance">
+                <i class="fa-brands fa-behance"></i>
+            </a>
+            <a href="https://github.com/agubandelli" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        <p>Agustina Bandelli © 2026</p>
+    </footer>
+
+    <div id="modalContacto" class="modal-overlay">
+        <div class="papel-contacto">
+            <span class="btn-cerrar" onclick="cerrarContacto()">&times;</span>
+           
+            
+            <div class="contenido-nota">
+                <h1 class="titulo-maquina">Contacto</h1>
+                <div id="typewriter-modal" class="introduccion">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalSobreMi" class="modal-overlay">
+    <div class="papel-contacto papel-sobre-mi">
+        <span class="btn-cerrar" onclick="cerrarSobreMi()">&times;</span>
+        <div class="contenido-nota">
+            <h1 class="titulo-maquina">Sobre mi</h1>
+            <div id="typewriter-sobreMi"></div>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
