@@ -1029,20 +1029,23 @@ pointer-events: none;
 /* Tablet y Móvil */
 @media (max-width: 1024px) {
     .nav-container {
-        grid-template-columns: auto 1fr auto;
-    }
-    .desktop-only {
-        display: none;
-    }
-
+    grid-template-columns: 1fr auto;   /* ← solo dos columnas */
+    align-items: center;               /* centrado vertical */
+}
+   .desktop-only {
+    display: none;
+}
     
     .menu-toggle {
-        display: flex;
-        justify-self: end;
-    }
+    display: flex;
+    grid-column: 2;                    /* ← la pone en la segunda columna (derecha) */
+    justify-self: end;                 /* por si acaso, no hace falta pero no molesta */
+}
+
     .nav-logo {
-        justify-self: start;
-    }
+    grid-column: 1;                    /* ← primera columna (izquierda) */
+    justify-self: start;
+}
     .nav-principal {
         padding: 25px 0;
     }
