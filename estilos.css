@@ -1028,42 +1028,56 @@ pointer-events: none;
 
 /* Tablet y Móvil */
 @media (max-width: 1024px) {
+    /* Cambiamos la barra a flexbox para control total */
     .nav-container {
-    grid-template-columns: 1fr auto;   /* ← solo dos columnas */
-    align-items: center;               /* centrado vertical */
-}
-   .desktop-only {
-    display: none;
-}
-    
+        display: flex;
+        justify-content: space-between;  /* logo a la izquierda, hamburguesa a la derecha */
+        align-items: center;
+        flex-wrap: nowrap;               /* todo en una sola línea */
+        padding: 0 30px;                 /* mantené el padding original */
+        width: 100%;
+    }
+
+    .desktop-only {
+        display: none;                  /* menú de escritorio oculto */
+    }
+
     .menu-toggle {
-    display: flex;
-    grid-column: 2;                    /* ← la pone en la segunda columna (derecha) */
-    justify-self: end;                 /* por si acaso, no hace falta pero no molesta */
-}
+        display: flex;                  /* visible */
+        /* ya no tiene grid-column ni justify-self, se posiciona por flex */
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;                 /* no se achica */
+    }
 
     .nav-logo {
-    grid-column: 1;                    /* ← primera columna (izquierda) */
-    justify-self: start;
-}
+        /* se apoya en el lado izquierdo gracias a space-between */
+        flex-shrink: 0;
+    }
+
     .nav-principal {
         padding: 25px 0;
+        background: transparent;        /* sin fondo por defecto */
     }
-    
-    /* Menú móvil activo */
+
+    /* Menú móvil activo (cuando se abre) */
     .nav-principal.active {
         background: rgba(26, 15, 8, 0.95);
         backdrop-filter: blur(10px);
         height: 100vh;
     }
+
     .nav-principal.active .nav-container {
-        display: flex;
+        /* En modo activo cambiamos a columna para mostrar los enlaces */
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
         position: relative;
     }
+
     .nav-principal.active .desktop-only {
         display: flex !important;
         flex-direction: column;
@@ -1071,26 +1085,31 @@ pointer-events: none;
         gap: 30px;
         margin: 30px 0;
     }
+
     .nav-principal.active .nav-links a {
         font-size: 1.2rem;
     }
+
     .nav-principal.active .nav-logo {
         order: -1;
         margin-bottom: 40px;
     }
+
     .nav-principal.active .menu-toggle {
         position: absolute;
         top: 25px;
         right: 30px;
     }
+
     .nav-principal.active .menu-icon {
         display: none;
     }
+
     .nav-principal.active .close-icon {
         display: block;
     }
-    
-    /* Ajustes de gabinete en móvil */
+
+    /* Ajustes de gabinete en móvil (los mismos que tenías) */
     .gabinete-interactivo {
         max-width: 90%;
     }
