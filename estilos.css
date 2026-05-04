@@ -284,6 +284,8 @@ h1 {
     filter: drop-shadow(2px 5px 5px rgba(0,0,0,0.5));
 }
 
+
+
 /* Posicionamiento de cada objeto (relativo al gabinete) */
  .item-sobreMi {
     top: 65%;
@@ -321,6 +323,13 @@ h1 {
     width: 9%;
 } 
 
+
+.item-uvas{
+    top: 68%;
+    left: 25%;
+    width: 9%;
+} 
+
 /* Efectos hover */
 .item-sobreMi:hover img {
     animation: swing 1.5s ease-in-out infinite;
@@ -335,7 +344,8 @@ h1 {
 .item-vinilo:hover,
 .item-folleto:hover,
 .item-app:hover,
-.item-caja:hover {
+.item-caja:hover,
+.item-uvas:hover {
     transform: scale(1.1);
 }
 
@@ -1227,6 +1237,11 @@ pointer-events: none;
     width: 24%;
 }
 
+.item-uvas{
+    top: 17%;
+    left: 42%;
+    width: 15%;
+} 
 }
 
 /* Móvil pequeño */
@@ -1252,6 +1267,11 @@ pointer-events: none;
     .item-app { top: 17%; left: 65%; width: 23%; }
     .item-caja { top: 19%; left: 10%; width: 25%; }
     .item-contacto { top: 42%; left: 65%; width: 24%; }
+    .item-uvas{
+    top: 17%;
+    left: 42%;
+    width: 15%;
+} 
 
     .texto-sobre-papel {
                 width: 85%;
