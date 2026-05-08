@@ -180,61 +180,7 @@ document.addEventListener("DOMContentLoaded", function() {
         checkScroll();
     }
 
-    // SLIDER AUTOMÁTICO (si existe en alguna de las páginas de proyectos)
-    const slider = document.querySelector('.slider');
-    if (slider) {
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        const dotsContainer = document.querySelector('.dots');
-        let currentIndex = 0;
-        let slideInterval;
-        const intervalTime = 3000;
-
-        // Crear dots
-        slides.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(i));
-            dotsContainer.appendChild(dot);
-        });
-        const dots = document.querySelectorAll('.dot');
-
-        function updateDots() {
-            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-        }
-
-        function goToSlide(index) {
-            if (index < 0) index = slides.length - 1;
-            if (index >= slides.length) index = 0;
-            currentIndex = index;
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-            updateDots();
-        }
-
-        function nextSlide() { goToSlide(currentIndex + 1); }
-        function prevSlide() { goToSlide(currentIndex - 1); }
-
-        function startAutoSlide() {
-            if (slideInterval) clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, intervalTime);
-        }
-        function stopAutoSlide() { clearInterval(slideInterval); }
-
-        if(prevBtn && nextBtn){
-             prevBtn.addEventListener('click', () => { prevSlide(); startAutoSlide(); });
-             nextBtn.addEventListener('click', () => { nextSlide(); startAutoSlide(); });
-        }
-        
-        const sliderContainer = document.querySelector('.slider-container');
-        if(sliderContainer){
-             sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-             sliderContainer.addEventListener('mouseleave', startAutoSlide);
-        }
-        
-        startAutoSlide();
-    }
+  
 });
         
 
