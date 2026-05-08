@@ -5,8 +5,7 @@
 const textoSobreMi = [
     "Nombre: Agustina Bandelli",
     "Descripción: Diseñadora interesada en ordenar ideas, encontrar sentido y transformar problemas en soluciones claras. Me caracteriza por combinar pensamiento estratégico con una mirada estética.",
-    "Intereses: Historia, arte, cine, análisis visual, narrativa, música.",
-    "Estado: En constante desarrollo."
+    "Intereses: Historia, arte, cine, análisis visual, narrativa, música."
 ];
 
 function abrirSobreMi() {

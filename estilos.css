@@ -349,6 +349,78 @@ h1 {
     transform: scale(1.1);
 }
 
+
+.tooltip-nombre {
+    position: absolute;
+    top: -50px; /* Lo ubicamos arriba del dibujo */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Centrado y un poquito bajado */
+    background-color: var(--color-crema);
+    color: var(--color-oscuro);
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-family: var(--sans-font);
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap; /* Para que el texto no se rompa en dos líneas */
+    
+    /* Lo ocultamos por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Para que no interfiera con el click */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* El triangulito de abajo del cartel (estilo globo de diálogo) */
+.tooltip-nombre::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px 5px 0;
+    border-style: solid;
+    border-color: var(--color-crema) transparent transparent transparent;
+}
+
+/* Aparece el cartelito al hacer hover */
+.item-bodega:hover .tooltip-nombre {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Sube suavemente */
+}
+
+.item-vinilo:hover .tooltip-nombre {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Sube suavemente */
+}
+.item-folleto:hover .tooltip-nombre {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Sube suavemente */
+}
+.item-app:hover .tooltip-nombre {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Sube suavemente */
+}
+.item-caja:hover .tooltip-nombre {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Sube suavemente */
+}
+.item-uvas:hover .tooltip-nombre {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Sube suavemente */
+}
+
+
+
+
+
 /* Efecto sobre abierto/cerrado */
 .sobre-img {
     width: 100%;
@@ -499,7 +571,7 @@ pointer-events: none;
     width: 90%;
     max-width: 550px;
     min-height: 400px; /* Altura mínima para que no se achate */
-    background-image: url('img/papel-contacto.png'); 
+    background-image: url('img/papel-prueba.png'); 
     background-size: cover; /* Cambiado a cover para que no se deforme */
     background-position: center;
     padding: 60px 50px;
@@ -525,7 +597,7 @@ pointer-events: none;
 .btn-cerrar {
     position: absolute;
     top: 15px;
-    right: 25px;
+    right: 45px;
     font-size: 35px;
     cursor: pointer;
     color: #1a0f08; /* Oscuro para que se vea */
@@ -595,7 +667,7 @@ pointer-events: none;
 
 /* ================= SOBRE MI =============== */
 #modalSobreMi .papel-contacto {
-    background-image: url('img/papel-sobremi.png'); 
+    background-image: url('img/papel-prueba.png'); 
     background-size: 100% 100%;
     background-repeat: no-repeat;
     
