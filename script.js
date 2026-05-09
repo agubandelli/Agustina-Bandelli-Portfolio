@@ -1,67 +1,5 @@
 // ==========================================
-// 1. FUNCIONES DEL MODAL DE sobre mi
-// ==========================================
-
-const textoSobreMi = [
-    "Nombre: Agustina Bandelli",
-    "Descripción: Diseñadora interesada en ordenar ideas, encontrar sentido y transformar problemas en soluciones claras. Me caracteriza por combinar pensamiento estratégico con una mirada estética.",
-    "Intereses: Historia, arte, cine, análisis visual, narrativa, música."
-];
-
-function abrirSobreMi() {
-    const modal = document.getElementById('modalSobreMi');
-    const contenedor = document.getElementById('typewriter-sobreMi');
-    
-    modal.classList.add('active');
-    contenedor.innerHTML = ""; 
-
-    setTimeout(() => {
-        escribirLineaSobreMi(0);
-    }, 600);
-}
-
-function escribirLineaSobreMi(indice) {
-    if (indice >= textoSobreMi.length) return;
-
-    const contenedor = document.getElementById('typewriter-sobreMi');
-    const p = document.createElement('p');
-    p.style.marginBottom = "15px";
-    contenedor.appendChild(p);
-
-    let charIndex = 0;
-    const frase = textoSobreMi[indice];
-
-    function type() {
-        if (charIndex < frase.length) {
-            p.textContent += frase.charAt(charIndex);
-            charIndex++;
-            setTimeout(type, 25); // Un poquito más rápido porque es más texto
-        } else {
-            setTimeout(() => escribirLineaSobreMi(indice + 1), 300);
-        }
-    }
-    type();
-}
-
-function cerrarSobreMi() {
-    document.getElementById('modalSobreMi').classList.remove('active');
-}
-
-// Actualizar el evento de cerrar al hacer clic fuera para que incluya este modal
-window.addEventListener('click', function(e) {
-    const modalContacto = document.getElementById('modalContacto');
-    const modalSobreMi = document.getElementById('modalSobreMi');
-    
-    if (e.target == modalContacto) cerrarContacto();
-    if (e.target == modalSobreMi) cerrarSobreMi();
-});
-
-
-
-
-
-// ==========================================
-// 1. FUNCIONES DEL MODAL DE CONTACTO
+// TEXTOS PARA MODALES
 // ==========================================
 const textoContacto = [
     "Si te interesa trabajar conmigo o querés charlar sobre un proyecto, podés escribirme por estos medios.",
@@ -69,70 +7,85 @@ const textoContacto = [
     "Teléfono: +598 99 993 077"
 ];
 
-function abrirContacto() {
-    const modal = document.getElementById('modalContacto');
-    const contenedor = document.getElementById('typewriter-modal');
-    
-    modal.classList.add('active'); // Muestra el modal
-    contenedor.innerHTML = "";     // Limpia el texto
-    
-    // Inicia la escritura después de que el papel termine de aparecer
-    setTimeout(() => {
-        escribirLinea(0);
-    }, 600);
-}
+const textoSobreMi = [
+    "Nombre: Agustina Bandelli",
+    "Descripción: Diseñadora interesada en ordenar ideas, encontrar sentido y transformar problemas en soluciones claras. Me caracteriza por combinar pensamiento estratégico con una mirada estética.",
+    "Intereses: Historia, arte, cine, análisis visual, narrativa, música."
+];
 
-function escribirLinea(indice) {
-    if (indice >= textoContacto.length) return;
-    
-    const contenedor = document.getElementById('typewriter-modal');
+// ==========================================
+// FUNCIÓN GENÉRICA PARA ESCRIBIR LÍNEAS
+// ==========================================
+function escribirLineas(contenedorId, lineas, indice = 0) {
+    if (indice >= lineas.length) return;
+
+    const contenedor = document.getElementById(contenedorId);
     const p = document.createElement('p');
     p.style.marginBottom = "15px";
     contenedor.appendChild(p);
-    
+
     let charIndex = 0;
-    const frase = textoContacto[indice];
-    
+    const frase = lineas[indice];
+
     function type() {
         if (charIndex < frase.length) {
             p.textContent += frase.charAt(charIndex);
             charIndex++;
-            setTimeout(type, 35); // Velocidad de las letras
+            setTimeout(type, 25);
         } else {
-            setTimeout(() => escribirLinea(indice + 1), 400); // Pausa entre líneas
+            setTimeout(() => escribirLineas(contenedorId, lineas, indice + 1), 300);
         }
     }
     type();
 }
 
-function cerrarContacto() {
-    document.getElementById('modalContacto').classList.remove('active');
+// ==========================================
+// ABRIR / CERRAR MODALES
+// ==========================================
+function abrirModal(idModal, idContenedor, lineas) {
+    const modal = document.getElementById(idModal);
+    const contenedor = document.getElementById(idContenedor);
+    modal.classList.add('active');
+    contenedor.innerHTML = "";
+    setTimeout(() => escribirLineas(idContenedor, lineas), 600);
 }
 
-// Cerrar al hacer clic fuera del papel del modal
+function cerrarModal(idModal) {
+    document.getElementById(idModal).classList.remove('active');
+}
+
+function abrirContacto() {
+    abrirModal('modalContacto', 'typewriter-modal', textoContacto);
+}
+function cerrarContacto() {
+    cerrarModal('modalContacto');
+}
+
+function abrirSobreMi() {
+    abrirModal('modalSobreMi', 'typewriter-sobreMi', textoSobreMi);
+}
+function cerrarSobreMi() {
+    cerrarModal('modalSobreMi');
+}
+
+// Cerrar modales haciendo clic fuera
 window.addEventListener('click', function(e) {
-    const modal = document.getElementById('modalContacto');
-    if (e.target == modal) {
-        cerrarContacto();
-    }
+    if (e.target === document.getElementById('modalContacto')) cerrarContacto();
+    if (e.target === document.getElementById('modalSobreMi')) cerrarSobreMi();
 });
 
 // ==========================================
-// 2. FUNCIONES GENERALES DE LA PÁGINA
+// DOM CARGADO
 // ==========================================
 document.addEventListener("DOMContentLoaded", function() {
-    
-    // NAVEGACIÓN: SCROLL EFECTO
     const nav = document.querySelector('.nav-principal');
+
+    // Scroll: clase nav-scrolled
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('nav-scrolled');
-        } else {
-            nav.classList.remove('nav-scrolled');
-        }
+        nav.classList.toggle('nav-scrolled', window.scrollY > 50);
     });
 
-    // MENÚ HAMBURGUESA
+    // Menú hamburguesa
     const toggle = document.getElementById("menu-toggle");
     if (toggle) {
         toggle.addEventListener("click", () => {
@@ -140,15 +93,13 @@ document.addEventListener("DOMContentLoaded", function() {
             toggle.classList.toggle("open");
         });
 
-        // Cerrar al hacer clic fuera
         document.addEventListener('click', (event) => {
             if (!nav.contains(event.target) && !toggle.contains(event.target) && nav.classList.contains('active')) {
                 nav.classList.remove('active');
                 toggle.classList.remove('open');
             }
         });
-        
-        // Cerrar al hacer clic en un enlace del menú móvil
+
         const mobileLinks = nav.querySelectorAll('.desktop-only a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -158,15 +109,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // ANIMACIÓN FRASES CON SCROLL
+    // Animación frases con scroll
     const parrafo1 = document.getElementById('parrafo1');
     const parrafo2 = document.getElementById('parrafo2');
-    
+
     if (parrafo1 && parrafo2) {
         function checkScroll() {
-            const windowHeight = window.innerHeight;
-            const threshold = windowHeight * 0.75;
-            
+            const threshold = window.innerHeight * 0.75;
             [parrafo1, parrafo2].forEach(p => {
                 const rect = p.getBoundingClientRect();
                 if (rect.top < threshold && rect.bottom > 0) {
@@ -178,8 +127,6 @@ document.addEventListener("DOMContentLoaded", function() {
         window.addEventListener('resize', checkScroll);
         checkScroll();
     }
-
-  
 });
         
 

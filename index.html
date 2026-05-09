@@ -45,7 +45,7 @@
         </div>
     </header>
 
-    <section  class="scroll-container">
+    <section class="scroll-container">
         <div class="parrafo parrafo-izquierda" id="parrafo1">
             Una colección de proyectos, ideas y procesos
         </div>
@@ -55,18 +55,15 @@
     </section>
 
     <section class="gabinete-interactivo" id="proyectos">
-        
-       <picture>
-        <source media="(min-width: 1025px)" srcset="img/gabinete-desktop.png">
-        
-        <img src="img/gabinete.png" class="mueble-img" alt="Gabinete de Curiosidades">
-    </picture>
-    <h2 class="titulo-madera">El Gabinete de Curiosidades</h2>
+        <picture>
+            <source media="(min-width: 1025px)" srcset="img/gabinete-desktop.png">
+            <img src="img/gabinete.png" class="mueble-img" alt="Gabinete de Curiosidades">
+        </picture>
+        <h2 class="titulo-madera">El Gabinete de Curiosidades</h2>
         <div class="capa-objetos">
-
             <a href="javascript:void(0)" class="item-gabinete item-sobreMi" onclick="abrirSobreMi()">
-    <img src="img/sobre-mi.png" alt="Sobre mí">
-</a>
+                <img src="img/sobre-mi.png" alt="Sobre mí">
+            </a>
             <a href="proyecto-bodega.html" class="item-gabinete item-bodega">
                 <img src="img/bodega.png" alt="Bodega">
                 <span class="tooltip-nombre">Diseño de Identidad Visual</span>
@@ -83,7 +80,6 @@
                 <img src="img/wesplit.png" alt="App WeSplit">
                 <span class="tooltip-nombre">Diseño de App</span>
             </a>
-
             <a href="proyecto-petshop.html" class="item-gabinete item-caja">
                 <img src="img/caja.png" alt="Pet Shop">
                 <span class="tooltip-nombre">Diseño de Ecommerce</span>
@@ -92,10 +88,10 @@
                 <img src="img/sobre-cerrado.png" class="sobre-img cerrado" alt="Sobre cerrado">
                 <img src="img/sobre-abierto.png" class="sobre-img abierto" alt="Sobre abierto">
             </a>
-             <a href="proyecto-landing.html" class="item-gabinete item-uvas">
+            <a href="proyecto-landing.html" class="item-gabinete item-uvas">
                 <img src="img/uvas.png" alt="Landing Page Bodega">
                 <span class="tooltip-nombre">Diseño de Landing Page</span>
-            </a> 
+            </a>
         </div>
     </section>
 
@@ -114,28 +110,27 @@
         <p>Agustina Bandelli © 2026</p>
     </footer>
 
+    <!-- Modal Contacto -->
     <div id="modalContacto" class="modal-overlay">
         <div class="papel-contacto">
             <span class="btn-cerrar" onclick="cerrarContacto()">&times;</span>
-           
-            
             <div class="contenido-nota">
                 <h1 class="titulo-maquina">Contacto</h1>
-                <div id="typewriter-modal" class="introduccion">
-                    </div>
+                <div id="typewriter-modal" class="introduccion"></div>
             </div>
         </div>
     </div>
 
+    <!-- Modal Sobre Mí -->
     <div id="modalSobreMi" class="modal-overlay">
-    <div class="papel-contacto papel-sobre-mi">
-        <span class="btn-cerrar" onclick="cerrarSobreMi()">&times;</span>
-        <div class="contenido-nota">
-            <h1 class="titulo-maquina">Sobre mi</h1>
-            <div id="typewriter-sobreMi"></div>
+        <div class="papel-contacto papel-sobre-mi">
+            <span class="btn-cerrar" onclick="cerrarSobreMi()">&times;</span>
+            <div class="contenido-nota">
+                <h1 class="titulo-maquina">Sobre mi</h1>
+                <div id="typewriter-sobreMi"></div>
+            </div>
         </div>
     </div>
-</div>
 
     <script src="script.js"></script>
 </body>
