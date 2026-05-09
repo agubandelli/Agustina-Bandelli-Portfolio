@@ -145,7 +145,7 @@ body {
 }
 
 h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(2rem, 8vw, 5rem);
     line-height: 1.2;
     margin: 0;
     color: var(--color-crema);
@@ -536,6 +536,7 @@ h1 {
     transform: rotate(-1deg);
     border-radius: 2px 5px 3px 8px;
     margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 .proyecto-descripcion {
@@ -562,7 +563,11 @@ h1 {
 }
 
 .tags-container {
-    margin-top: 1rem;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 0.75rem;     
+     justify-content: left; 
+     margin-top: 1rem;
 }
 
 .btn-papel-antiguo {
