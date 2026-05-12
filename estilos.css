@@ -63,7 +63,7 @@ body {
     padding: 0 30px;
 }
 
-/* Desktop: tres columnas */
+
 @media (min-width: 1025px) {
     .nav-container {
         grid-template-columns: 1fr auto 1fr;
@@ -98,7 +98,7 @@ body {
     height: 50px;
 }
 
-/* Botón menú móvil */
+/* Botón menú celu */
 .menu-toggle {
     display: none;
     background: none;
@@ -188,7 +188,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15vh;
+    gap: 10vh;
     padding: 20vh 2rem;
 }
 
